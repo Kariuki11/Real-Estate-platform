@@ -12,6 +12,19 @@ function SignUp() {
         [e.target.id]: e.target.value
       });
   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch('/api/auth/signup',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      const data = await res.json();
+      console.log(data);
+  };
   console.log(formData)
 
   return (
@@ -40,7 +53,7 @@ function SignUp() {
           id='password'
           onChange={handleChange}
         />
-        
+
         <button className='bg-slate-700 text-white p-4 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>Sign up</button>
       </form>
       <div className="flex gap-2 mt-5">
