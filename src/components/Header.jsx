@@ -27,9 +27,14 @@ function Header() {
               About
             </li>
           </Link>
-          <Link to = '/Sign-in'>
+          <Link to = '/Sign-up'>
             <li className='text-white hover:underline'>
               Sign in
+              </li>
+          </Link>
+          <Link to = '/Sign-up'>
+            <li className='text-white hover:underline'>
+              Sign up
               </li>
           </Link>
         </ul>
